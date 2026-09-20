@@ -15,14 +15,16 @@ const stops = [
   },
   {
     id: 1,
-    kicker: "Paisaje del río",
-    title: "Mirador sobre el río",
-    short: "Una pausa para observar",
+    kicker: "Primera parada",
+    title: "Mirador y cartel ALUMINÉ",
+    short: "Cartel, río y paisaje",
     coords: [-39.2406, -70.91265],
-    image: "./assets/mirador-rio.webp",
-    alt: "Mirador de madera con vista al río Aluminé",
-    note: "Hacé una pausa para observar el cauce, la vegetación ribereña y la forma en que el río acompaña la entrada al sector urbano.",
-    direction: "Continuá unos metros hacia el Puente Azul."
+    image: "./assets/cartel-alumine.webp",
+    alt: "Gran cartel de Aluminé acompañado por el paisaje",
+    secondaryImage: "./assets/mirador-alumine.webp",
+    secondaryAlt: "Mirador con vista panorámica al río Aluminé y los cerros",
+    noteHtml: "Al continuar por la <strong>Ruta Provincial 23</strong>, llegamos a la primera parada del recorrido, donde nos recibe una de las imágenes más representativas de la localidad: el gran cartel de <strong>ALUMINÉ</strong>, acompañado por el río y el paisaje que lo rodea.<br><br>Desde el mirador se puede hacer una pausa para contemplar el curso del río Aluminé, su vegetación ribereña y los cerros que forman parte del entorno. Es un lugar ideal para disfrutar del paisaje y registrar el momento.<br><br><strong>📸 Momento para una foto:</strong> sacate una fotografía junto al cartel de ALUMINÉ y luego acercate al mirador para obtener una vista panorámica del río.<br><br><strong>Recomendación:</strong> estacioná únicamente en un lugar seguro, respetá la naturaleza y evitá dejar residuos.",
+    direction: "Próxima parada: Puente Azul."
   },
   {
     id: 2,
