@@ -6,9 +6,11 @@ const stops = [
     short: "Prepará el recorrido",
     // Ubicación exacta compartida desde Google Maps.
     coords: [-39.2428951, -70.915708],
-    image: "./assets/inicio-rp23.webp",
-    alt: "Inicio del recorrido en Alcaman y Ruta Provincial 23",
-    note: "Comenzá en el acceso a Minimercado Amancay, sobre Alcaman y junto a la Ruta Provincial 23. Es un buen punto para revisar el mapa, organizar las paradas y tomar la primera foto del recorrido.",
+    image: "./assets/minimercado-amancay.webp",
+    alt: "Frente de Minimercado Amancay, punto de inicio del recorrido",
+    secondaryImage: "./assets/bienvenida-alumine.webp",
+    secondaryAlt: "Cartel de bienvenida a Aluminé junto a la Ruta Provincial 23",
+    noteHtml: "La experiencia comienza en <strong>Minimercado Amancay</strong>, donde el visitante puede retirar su autoguía y prepararse antes de comenzar el recorrido.<br><br>La propuesta está diseñada para realizarse de manera independiente y principalmente en vehículo, siguiendo la <strong>Ruta Provincial 23</strong>. A lo largo del camino, el río Aluminé será uno de los grandes protagonistas.<br><br><strong>Antes de salir:</strong> aprovechá este punto para abastecerte de lo necesario para el paseo y conocer algunos productos caseros.",
     direction: "Próxima parada: mirador sobre el río Aluminé."
   },
   {
@@ -185,6 +187,8 @@ const els = {
   routeShadow: document.querySelector("#route-shadow"),
   list: document.querySelector("#stops-list"),
   image: document.querySelector("#selected-image"),
+  secondaryImage: document.querySelector("#selected-image-secondary"),
+  media: document.querySelector("#selected-media"),
   number: document.querySelector("#selected-number"),
   kicker: document.querySelector("#selected-kicker"),
   title: document.querySelector("#selected-title"),
@@ -319,10 +323,25 @@ function selectStop(index, moveMap = false) {
 
   els.image.src = stop.image;
   els.image.alt = stop.alt;
+  if (stop.secondaryImage) {
+    els.secondaryImage.src = stop.secondaryImage;
+    els.secondaryImage.alt = stop.secondaryAlt;
+    els.secondaryImage.hidden = false;
+    els.media.classList.add("has-two");
+  } else {
+    els.secondaryImage.removeAttribute("src");
+    els.secondaryImage.alt = "";
+    els.secondaryImage.hidden = true;
+    els.media.classList.remove("has-two");
+  }
   els.number.textContent = String(count).padStart(2, "0");
   els.kicker.textContent = stop.kicker;
   els.title.textContent = stop.title;
-  els.note.textContent = stop.note;
+  if (stop.noteHtml) {
+    els.note.innerHTML = stop.noteHtml;
+  } else {
+    els.note.textContent = stop.note;
+  }
   els.direction.textContent = stop.direction;
   els.prev.disabled = selected === 0;
   els.next.disabled = selected === stops.length - 1;
