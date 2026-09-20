@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#173d32" />
+    <meta name="description" content="Mapa interactivo de la Auto-guía Amancay por Aluminé." />
+    <title>Auto-guía Amancay · Ruta del Río</title>
+    <link rel="preconnect" href="https://tile.openstreetmap.org" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="hero" id="inicio">
+      <nav class="nav shell" aria-label="Navegación principal">
+        <a class="brand" href="#inicio" aria-label="Auto-guía Amancay, inicio">
+          <span class="brand-flower" aria-hidden="true">✦</span>
+          <span>AUTO-GUÍA AMANCAY</span>
+        </a>
+        <a class="nav-link" href="#circuito">Ver circuito <span aria-hidden="true">↓</span></a>
+      </nav>
+
+      <div class="hero-inner shell">
+        <div class="hero-copy">
+          <p class="eyebrow">ALUMINÉ · NEUQUÉN</p>
+          <h1>Ruta, río<br />e historia</h1>
+          <p class="hero-lead">
+            Un recorrido autoguiado en auto por seis puntos del paisaje natural y cultural de Aluminé.
+            Avanzá a tu ritmo, del inicio sobre la RP 23 a la antigua usina del EPEN.
+          </p>
+          <button class="primary-button" id="start-tour" type="button">
+            Comenzar recorrido <span aria-hidden="true">→</span>
+          </button>
+        </div>
+
+        <div class="hero-stats" aria-label="Datos del recorrido">
+          <div><strong>6</strong><span>paradas</span></div>
+          <div><strong>RP 23</strong><span>eje del circuito</span></div>
+          <div><strong>Libre</strong><span>a tu propio ritmo</span></div>
+        </div>
+      </div>
+      <div class="river-line" aria-hidden="true"></div>
+    </header>
+
+    <main>
+      <section class="route-section shell" id="circuito" aria-labelledby="route-title">
+        <div class="section-intro">
+          <div>
+            <p class="eyebrow dark">CIRCUITO INTERACTIVO</p>
+            <h2 id="route-title">Seguí las paradas en orden</h2>
+          </div>
+          <p>Tocá un punto del mapa o una tarjeta para ver su foto, su nota y continuar hacia la siguiente parada.</p>
+        </div>
+
+        <div class="route-layout">
+          <aside class="stops-panel" aria-label="Paradas del recorrido">
+            <div class="progress-wrap" aria-label="Progreso del recorrido">
+              <div class="progress-meta"><span id="progress-label">Parada 1 de 6</span><span id="progress-percent">17%</span></div>
+              <div class="progress-track"><span id="progress-bar"></span></div>
+            </div>
+            <div id="stops-list" class="stops-list"></div>
+          </aside>
+
+          <div class="map-column">
+            <div class="map-shell">
+              <div id="map" class="map" role="application" aria-label="Mapa interactivo de la Auto-guía Amancay">
+                <div class="tile-layer" id="tile-layer" aria-hidden="true"></div>
+                <svg class="route-overlay" id="route-overlay" aria-hidden="true">
+                  <path id="route-shadow"></path>
+                  <path id="route-path"></path>
+                </svg>
+                <div class="marker-layer" id="marker-layer"></div>
+
+                <div class="map-badge"><span class="live-dot"></span> Mapa real</div>
+                <div class="map-controls" aria-label="Controles del mapa">
+                  <button id="zoom-in" type="button" aria-label="Acercar mapa">+</button>
+                  <button id="zoom-out" type="button" aria-label="Alejar mapa">−</button>
+                  <button id="fit-route" type="button" aria-label="Mostrar todo el circuito" title="Mostrar circuito completo">⌖</button>
+                </div>
+                <a class="osm-credit" href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">© OpenStreetMap</a>
+              </div>
+
+              <article class="selected-stop" id="selected-stop" aria-live="polite">
+                <img id="selected-image" src="" alt="" />
+                <div class="selected-copy">
+                  <div class="selected-heading">
+                    <span class="stop-chip" id="selected-number"></span>
+                    <span class="stop-kicker" id="selected-kicker"></span>
+                  </div>
+                  <h3 id="selected-title"></h3>
+                  <p id="selected-note"></p>
+                  <p class="direction" id="selected-direction"></p>
+                  <div class="tour-controls">
+                    <button class="secondary-button" id="prev-stop" type="button">← Anterior</button>
+                    <button class="primary-button small" id="next-stop" type="button">Siguiente →</button>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="travel-notes" aria-labelledby="notes-title">
+        <div class="shell notes-grid">
+          <div>
+            <p class="eyebrow">ANTES DE SALIR</p>
+            <h2 id="notes-title">Recorré y cuidá Aluminé</h2>
+          </div>
+          <ul class="notes-list">
+            <li><span>01</span><p>Conducí despacio y estacioná únicamente en sectores permitidos.</p></li>
+            <li><span>02</span><p>Respetá la cartelería, los accesos y las áreas operativas.</p></li>
+            <li><span>03</span><p>Llevate tus residuos y cuidá el río, la flora y la fauna.</p></li>
+          </ul>
+        </div>
+        <footer class="shell footer">
+          <span>Auto-guía Amancay · Aluminé</span>
+          <span>Conocer · Valorar · Cuidar</span>
+        </footer>
+      </section>
+    </main>
+
+    <noscript>Necesitás activar JavaScript para usar el mapa interactivo.</noscript>
+    <script src="./app.js" defer></script>
+  </body>
+</html>
