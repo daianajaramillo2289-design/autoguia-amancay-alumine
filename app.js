@@ -71,12 +71,15 @@ const stops = [
   {
     id: 5,
     kicker: "Final del recorrido",
-    title: "Antigua usina del EPEN",
-    short: "Historia y vista al Quilquelil",
+    title: "Antigua usina del EPEN y cerro Quilque Lil",
+    short: "Historia, naturaleza y paisaje",
     coords: [-39.2144148, -70.9157778],
-    image: "./assets/usina-epen.webp",
-    alt: "Antigua usina del EPEN y paisaje hacia el cerro Quilquelil",
-    note: "Cierre del circuito junto a una usina histórica que continúa en funcionamiento. Desde el entorno se abre la vista hacia el cerro Quilquelil: observá la infraestructura sin acercarte a las áreas operativas.",
+    image: "./assets/usina-epen-actual.webp",
+    alt: "Edificio de la antigua usina del EPEN en Aluminé",
+    secondaryImage: "./assets/cerro-quilque-lil-fauna.webp",
+    secondaryAlt: "Ave de la fauna del área natural protegida cerro Quilque Lil",
+    preserveAllImages: true,
+    noteHtml: "La última parada del recorrido nos acerca a una parte importante de la historia energética de Aluminé. La antigua usina del EPEN fue inaugurada en <strong>1960</strong> para abastecer de electricidad a los primeros pobladores, utilizando el caudal del <strong>río Ruca Choroi</strong>. En <strong>1987</strong> fue modernizada para mejorar su capacidad de generación y permaneció en funcionamiento hasta <strong>2002</strong>.<br><br>Desde este sector puede contemplarse el <strong>cerro Quilque Lil</strong>, una meseta de gran riqueza natural y cultural delimitada por los ríos Ruca Choroi y Aluminé. El área natural protegida que rodea el cerro busca conservar el patrimonio local y promover la educación ambiental y el turismo de naturaleza. Cuenta con dos senderos señalizados: uno de <strong>8 kilómetros</strong> y otro más accesible de <strong>1 kilómetro</strong>, que llega hasta una arboleda de álamos blancos.<br><br><strong>🏁 Final del recorrido:</strong> una parada donde la historia, el río y el paisaje se unen para despedir esta experiencia por Aluminé.<br><br><strong>Más información:</strong> <a href=\"https://www.facebook.com/QuilqueLil\" target=\"_blank\" rel=\"noopener\">Facebook</a> · <a href=\"https://www.instagram.com/quilquelil/\" target=\"_blank\" rel=\"noopener\">Instagram</a>",
     direction: "Llegaste al final. Disfrutá la vista y regresá por la RP 23."
   }
 ];
