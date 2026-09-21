@@ -60,9 +60,12 @@ const stops = [
     title: "Museo El Charrúa",
     short: "Historia e identidad",
     coords: [-39.2270021, -70.9129839],
-    image: "./assets/museo-charrua.webp",
-    alt: "Acceso al Museo Municipal y Centro de Interpretación El Charrúa",
-    note: "La casona de la antigua estancia reúne historias, objetos y memoria local. Consultá los horarios vigentes antes de ingresar; su entorno también ayuda a leer el pasado de Aluminé.",
+    image: "./assets/museo-charrua-entrada.webp",
+    alt: "Entrada actual del Museo Municipal El Charrúa",
+    secondaryImage: "./assets/museo-charrua-casona.webp",
+    secondaryAlt: "Casona histórica del Museo El Charrúa rodeada de árboles y flores",
+    preserveAllImages: true,
+    noteHtml: "La quinta parada nos invita a conocer parte de la historia y la identidad cultural de Aluminé. El museo funciona en la antigua casa principal de la estancia <strong>El Charrúa</strong>, restaurada junto con su entorno para conservar sus características originales.<br><br>El edificio fue construido con la técnica de <strong>pared francesa o quincha</strong>, elaborada principalmente con barro, y conserva detalles arquitectónicos propios del litoral argentino. Sus antiguos propietarios provenían de Uruguay, origen del nombre <strong>El Charrúa</strong>, en referencia al pueblo originario de aquella región.<br><br>El museo reúne, conserva, investiga y exhibe objetos que forman parte del patrimonio cultural de la cuenca del río Aluminé. También desarrolla actividades educativas, científicas y culturales destinadas a mantener viva la memoria de la comunidad.<br><br><strong>📸 Momento para una foto:</strong> observá la construcción tradicional del museo y los detalles de su entorno restaurado.<br><br><strong>Información útil:</strong> abierto de lunes a domingo, de 9:00 a 16:00. Antes de visitar, se recomienda consultar los horarios en sus redes sociales.<br><br><strong>Contacto:</strong> <a href=\"tel:+5492942469588\">+54 9 2942 469588</a> · <a href=\"https://www.facebook.com/museoelcharrua\" target=\"_blank\" rel=\"noopener\">Facebook</a> · <a href=\"https://www.instagram.com/museoelcharrua/\" target=\"_blank\" rel=\"noopener\">Instagram</a>",
     direction: "Último tramo: seguí hacia el norte hasta la antigua usina."
   },
   {
