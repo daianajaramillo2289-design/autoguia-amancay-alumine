@@ -46,9 +46,12 @@ const stops = [
     title: "Balneario municipal",
     short: "Costa y espacio recreativo",
     coords: [-39.22975, -70.91208],
-    image: "./assets/balneario.webp",
-    alt: "Sector del balneario municipal junto al río Aluminé",
-    note: "Costa amplia y sector recreativo junto al río. Hacé una pausa breve, observá cómo la comunidad disfruta este patrimonio natural y respetá siempre las condiciones y la cartelería del lugar.",
+    image: "./assets/balneario-playa.webp",
+    alt: "Playa Municipal junto al río Aluminé y los cerros",
+    secondaryImage: "./assets/balneario-rio.webp",
+    secondaryAlt: "Costa arbolada de la Playa Municipal de Aluminé",
+    preserveAllImages: true,
+    noteHtml: "La cuarta parada invita a disfrutar de una pausa junto al <strong>río Aluminé</strong>. La Playa Municipal es uno de los sectores más elegidos por su amplitud, su cercanía al pueblo y su costa de arena con aguas generalmente calmas. Durante la temporada cuenta con actividades organizadas, guardavidas y los servicios del camping y parador <strong>La Playa</strong>.<br><br>El río Aluminé recorre cerca de <strong>200 kilómetros</strong> y posee numerosos accesos para disfrutar de sus costas, su sombra y su paisaje. Además, es escenario de actividades como el kayak y la pesca deportiva. Sus aguas y las de sus afluentes —los ríos Quillén, Ruca Choroy y Pulmarí— albergan truchas arcoíris y marrones, convirtiendo a la zona en un destino destacado para la pesca con mosca. Aluminé es reconocida también como la <strong>Capital Nacional del Kayak</strong>.<br><br><strong>📸 Momento para una foto:</strong> buscá una vista donde se integren el río, la playa y los cerros que rodean la localidad.<br><br><strong>Recomendación:</strong> cuidá el lugar, llevate tus residuos y respetá la cartelería y las indicaciones de los guardavidas. Antes de ingresar al agua, comprobá que esté permitido y prestá atención a las condiciones del río.",
     direction: "Continuá por la RP 23 hacia el Museo El Charrúa."
   },
   {
@@ -352,6 +355,7 @@ function selectStop(index, moveMap = false) {
     els.media.classList.remove("has-three");
   }
   els.media.classList.toggle("preserve-secondary", Boolean(stop.preserveSecondary));
+  els.media.classList.toggle("preserve-all", Boolean(stop.preserveAllImages));
   els.number.textContent = String(count).padStart(2, "0");
   els.kicker.textContent = stop.kicker;
   els.title.textContent = stop.title;
