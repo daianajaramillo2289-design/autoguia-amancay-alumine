@@ -32,10 +32,14 @@ const stops = [
     title: "Puente Azul",
     short: "Río, camino y comunidad",
     coords: [-39.23222, -70.91205],
-    image: "./assets/puente-rio.webp",
-    alt: "Puente Azul sobre el río Aluminé",
-    note: "Este cruce permite reconocer la relación entre ambas orillas, el camino y el paisaje del valle. Observá el río desde un lugar seguro, sin detenerte sobre la calzada.",
-    direction: "Retomá la RP 23 y seguí hacia el balneario municipal."
+    image: "./assets/puente-azul-historico.webp",
+    alt: "Imagen histórica de la construcción del Puente Azul",
+    secondaryImage: "./assets/puente-azul-actual.webp",
+    secondaryAlt: "Vista actual del Puente Azul sobre el río Aluminé",
+    thirdImage: "./assets/registro-civil-rio.webp",
+    thirdAlt: "Sector del río Aluminé y antigua casa donde funcionó el Registro Civil",
+    noteHtml: "La tercera parada nos lleva hasta el <strong>Puente Azul</strong>, uno de los puntos más característicos del recorrido. Fue construido entre <strong>1977 y 1979</strong> y, desde entonces, permite conectar las dos orillas del río Aluminé.<br><br>Desde este sector se puede apreciar la relación entre el río, el camino, la vegetación y los cerros que rodean la localidad. Frente al puente se encuentra una antigua casa donde funcionó el <strong>Registro Civil</strong>, un edificio que forma parte del patrimonio histórico local y conserva parte de la memoria de Aluminé.<br><br><strong>📸 Momento para una foto:</strong> buscá un lugar seguro desde donde puedas fotografiar el Puente Azul, el río y la antigua casa del Registro Civil.<br><br><strong>Recomendación:</strong> no te detengas sobre la calzada ni cruces fuera de los sectores permitidos. Estacioná en un lugar seguro y respetá la circulación.",
+    direction: "Próxima parada: Balneario Municipal."
   },
   {
     id: 3,
@@ -190,6 +194,7 @@ const els = {
   list: document.querySelector("#stops-list"),
   image: document.querySelector("#selected-image"),
   secondaryImage: document.querySelector("#selected-image-secondary"),
+  thirdImage: document.querySelector("#selected-image-third"),
   media: document.querySelector("#selected-media"),
   number: document.querySelector("#selected-number"),
   kicker: document.querySelector("#selected-kicker"),
@@ -335,6 +340,17 @@ function selectStop(index, moveMap = false) {
     els.secondaryImage.alt = "";
     els.secondaryImage.hidden = true;
     els.media.classList.remove("has-two");
+  }
+  if (stop.thirdImage) {
+    els.thirdImage.src = stop.thirdImage;
+    els.thirdImage.alt = stop.thirdAlt;
+    els.thirdImage.hidden = false;
+    els.media.classList.add("has-three");
+  } else {
+    els.thirdImage.removeAttribute("src");
+    els.thirdImage.alt = "";
+    els.thirdImage.hidden = true;
+    els.media.classList.remove("has-three");
   }
   els.number.textContent = String(count).padStart(2, "0");
   els.kicker.textContent = stop.kicker;
