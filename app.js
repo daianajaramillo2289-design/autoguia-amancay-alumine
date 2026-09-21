@@ -34,10 +34,9 @@ const stops = [
     coords: [-39.23222, -70.91205],
     image: "./assets/puente-azul-historico.webp",
     alt: "Imagen histórica de la construcción del Puente Azul",
-    secondaryImage: "./assets/puente-azul-actual.webp",
-    secondaryAlt: "Vista actual del Puente Azul sobre el río Aluminé",
-    thirdImage: "./assets/registro-civil-rio.webp",
-    thirdAlt: "Sector del río Aluminé y antigua casa donde funcionó el Registro Civil",
+    secondaryImage: "./assets/registro-civil-rio.webp",
+    secondaryAlt: "Sector del río Aluminé y antigua casa donde funcionó el Registro Civil",
+    preserveSecondary: true,
     noteHtml: "La tercera parada nos lleva hasta el <strong>Puente Azul</strong>, uno de los puntos más característicos del recorrido. Fue construido entre <strong>1977 y 1979</strong> y, desde entonces, permite conectar las dos orillas del río Aluminé.<br><br>Desde este sector se puede apreciar la relación entre el río, el camino, la vegetación y los cerros que rodean la localidad. Frente al puente se encuentra una antigua casa donde funcionó el <strong>Registro Civil</strong>, un edificio que forma parte del patrimonio histórico local y conserva parte de la memoria de Aluminé.<br><br><strong>📸 Momento para una foto:</strong> buscá un lugar seguro desde donde puedas fotografiar el Puente Azul, el río y la antigua casa del Registro Civil.<br><br><strong>Recomendación:</strong> no te detengas sobre la calzada ni cruces fuera de los sectores permitidos. Estacioná en un lugar seguro y respetá la circulación.",
     direction: "Próxima parada: Balneario Municipal."
   },
@@ -352,6 +351,7 @@ function selectStop(index, moveMap = false) {
     els.thirdImage.hidden = true;
     els.media.classList.remove("has-three");
   }
+  els.media.classList.toggle("preserve-secondary", Boolean(stop.preserveSecondary));
   els.number.textContent = String(count).padStart(2, "0");
   els.kicker.textContent = stop.kicker;
   els.title.textContent = stop.title;
