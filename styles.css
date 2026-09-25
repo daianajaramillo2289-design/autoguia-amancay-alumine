@@ -264,6 +264,15 @@ h1 { margin: 0; max-width: 760px; font-size: clamp(4.25rem, 9vw, 7.8rem); line-h
 .notes-list li { display: grid; grid-template-columns: 50px 1fr; gap: 18px; align-items: start; padding: 22px 0; border-bottom: 1px solid rgba(255,255,255,.16); }
 .notes-list span { color: var(--flower); font-family: "Fraunces", Georgia, serif; }
 .notes-list p { margin: 0; color: rgba(255,255,255,.72); line-height: 1.6; }
+.amancay-signoff { display: grid; grid-template-columns: 112px minmax(0, 1fr) auto; gap: 26px; align-items: center; margin-top: 64px; padding: 24px 28px; border: 1px solid rgba(255,255,255,.16); border-radius: 24px; background: rgba(255,255,255,.06); }
+.amancay-signoff img { width: 112px; aspect-ratio: 1; object-fit: cover; border-radius: 50%; box-shadow: 0 10px 28px rgba(0,0,0,.18); }
+.amancay-signoff-copy { max-width: 570px; }
+.amancay-signoff-label { margin: 0 0 7px; color: var(--flower); font-size: .74rem; font-weight: 800; letter-spacing: .12em; }
+.amancay-signoff h3 { margin: 0; color: white; font-family: "Fraunces", Georgia, serif; font-size: clamp(1.55rem, 2.8vw, 2.25rem); line-height: 1.08; letter-spacing: -.02em; }
+.amancay-signoff-copy > p:last-child { margin: 10px 0 0; max-width: 520px; color: rgba(255,255,255,.7); font-size: .9rem; line-height: 1.55; }
+.amancay-social { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 9px; }
+.amancay-social a { display: inline-flex; align-items: center; min-height: 42px; padding: 0 16px; border: 1px solid rgba(255,255,255,.2); border-radius: 99px; color: white; background: rgba(255,255,255,.08); font-size: .82rem; font-weight: 700; text-decoration: none; transition: background .2s ease, color .2s ease, transform .2s ease; }
+.amancay-social a:hover, .amancay-social a:focus-visible { color: var(--forest); background: var(--flower); transform: translateY(-1px); outline: none; }
 .footer { display: flex; justify-content: space-between; margin-top: 80px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.16); color: rgba(255,255,255,.45); font-size: .75rem; }
 
 noscript { display: block; padding: 20px; text-align: center; color: #772e22; background: #fff0eb; }
@@ -303,7 +312,18 @@ noscript { display: block; padding: 20px; text-align: center; color: #772e22; ba
   .stop-card { min-height: 76px; }
   .notes-grid { grid-template-columns: 1fr; gap: 44px; }
   .travel-notes { padding-top: 70px; }
+  .amancay-signoff { grid-template-columns: 86px 1fr; gap: 18px; padding: 20px; }
+  .amancay-signoff img { width: 86px; }
+  .amancay-social { grid-column: 1 / -1; justify-content: flex-start; }
   .footer { flex-direction: column; gap: 9px; margin-top: 55px; }
+}
+
+@media (max-width: 560px) {
+  .amancay-signoff { grid-template-columns: 72px 1fr; }
+  .amancay-signoff img { width: 72px; }
+  .amancay-signoff-copy > p:last-child { display: none; }
+  .amancay-social { display: grid; grid-template-columns: repeat(3, 1fr); width: 100%; }
+  .amancay-social a { justify-content: center; padding-inline: 8px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
